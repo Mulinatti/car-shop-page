@@ -294,10 +294,8 @@ address p:nth-child(2) {
 @media only screen and (max-width: 580px) {
 
     body {
-
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+        
+        display: block;
     }
 
     main {
