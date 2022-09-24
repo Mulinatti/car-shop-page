@@ -84,7 +84,7 @@ section .box {
     background-image: url(./img/porsche.png);
     background-repeat: no-repeat;
     background-position: center;
-    transition: ease-in .7s;
+    transition: ease-in-out .7s;
 }
 
 .box:nth-child(1) {
@@ -99,12 +99,12 @@ section .box {
     background-image: url(./img/porsche2.png);
 }
 
-section > :not(:nth-child(1)) {
+section .buy__button:nth-child(1) {
 
     font-size: 14px;
 }
 
-section > :not(:nth-child(1)) a {
+section .buy__button:nth-child(1) {
 
     padding: 15px;
 }
@@ -157,7 +157,7 @@ section > :not(:nth-child(1)) a {
 /* nav sidebar */
 
 main > nav {
-    background-color: var(--slate-gray);
+    background-color: #54bdb8;
     grid-column: 1 / 2;
     grid-row: 1 / 5;
 
@@ -174,10 +174,6 @@ nav > h1 {
     color: var(--white);
 }
 
-nav div h2 {
-
-    border-bottom: 1px solid #fcfcfc75;
-}
 
 .cart {
 
@@ -214,6 +210,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 footer p {
@@ -232,4 +229,153 @@ footer i {
 address p:nth-child(2) {
 
     font-size: 14px;
+}
+
+
+/* MEDIA QUERIES*/ 
+
+@media only screen and (max-width: 1075px) {
+    
+    .box:not(:nth-child(1)) {
+
+        background-size: 150px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+
+    .box:nth-child(3) {
+
+        display: none;
+    }
+    
+    .box:nth-child(4) {
+
+        display: none;
+    }
+
+    .box:nth-child(1) {
+
+        grid-row: 1 / 3;
+    }
+
+    .box:nth-child(2) {
+
+        grid-column: 1 / 4;
+        grid-row: 3 / 5;
+        background-size: 450px;
+        font-size: 16px
+    }
+
+    section .buy__button {
+
+        padding: 15px;
+    }
+
+    main > nav {
+
+        padding: 8px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    
+    .box:nth-child(1) {
+
+        background-size: 250px;
+    }
+
+    .box:nth-child(2) {
+
+        background-size: 250px;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+
+    body {
+
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    main header {
+
+        padding: 10px 0;
+    }
+
+    .cars ul {
+
+        margin-top: 1.2rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cars ul li {
+
+        margin: 0 15px;
+    }
+
+    section {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    section .box div h2, p {
+
+        font-size: 16px;
+    }
+
+    .box {
+
+        height: 200px;
+    }
+
+    .buy__button {
+
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 405px) {
+
+    .navigation__header ul {
+
+        font-size: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navigation__header ul li {
+
+        margin: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 338px) {
+    
+    .cars ul {
+
+        flex-direction: column;
+    }
+
+    .box:nth-child(1) {
+
+        background-size: 200px;
+    }
+
+    .box:nth-child(2) {
+
+        background-size: 200px;
+    }
 }
